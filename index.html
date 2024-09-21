@@ -7,20 +7,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script> 
-        var sen = window.prompt(`Qual é a senha?`)
-        if(sen == '142536'){
-                    window.alert('Senha Correta.')
-                }else{
-                    window.alert('Senha Errada!')
-                    window.close()
-                }
-        </script>
-      
-        <h1>Sanches Garagem</h1><br>
-        <a href="vendido.html"><button>vendido</button></a>
-        <br><br>
-        <a href="disponivel.html"><button>disponivel</button></a>
-    
+    <h1>Sanches Garagem</h1>
+    <div id="vend">
+        <h2>Digite a senha</h2>
+            <input type="number" name="" id="senha">
+            <br>
+            <input type="button" value="confirmar" onclick="calcular()">
+    </div>
+
+
+<div id="disp">
+
+</div>
+
+<script>
+    function calcular(){
+        var txt = document.querySelector(`input#senha`)
+        var ven = document.querySelector(`div#vend`)
+        var dis = document.querySelector(`div#disp`)
+
+        if(txt.value == '142536'){
+            ven.innerHTML = '<br><a href="vendido.html"><button>vendido</button></a>'
+            dis.innerHTML = '<br><a href="disponivel.html"><button>disponivel</button></a>'
+        }else{
+            ven.innerHTML = 'Senha incorreta'
+            dis.innerHTML = ''
+        }
+    }
+</script>
+
+
 </body>
 </html>
